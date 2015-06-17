@@ -162,26 +162,6 @@ module.exports = function (grunt) {
                     browserNoActivityTimeout: 100000
                 }
             }
-        },
-
-        // Test web server
-        connect: {
-            dev: {
-                options: {
-                    port: 9000,
-                    debug: true,
-                    keepalive: true,
-                    open: 'http://localhost:9000/test/impl'
-                }
-            }
-        },
-
-        forever: {
-            testServer: {
-                options: {
-                    index: 'testServer.js'
-                }
-            }
         }
     });
 
@@ -276,7 +256,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('dev', ['connect:dev']);
     grunt.registerTask('prebuild', ['gitInfo', 'parseVers', 'npm-install', 'bower']);
     grunt.registerTask('deps', ['prebuild', 'npm-install', 'bower']);
     grunt.registerTask('build', ['clean', 'deps', 'coffee', 'uglify']);
