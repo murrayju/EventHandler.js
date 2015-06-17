@@ -1,0 +1,44 @@
+{
+    "name": "EventHandler.js",
+    "repository": "https://github.com/murrayju/xmlCoffee",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "*",
+        "karma": "*",
+        "grunt-cli": "*",
+        "grunt-bower-task": "*",
+        "grunt-contrib-requirejs": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-compress": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-karma": "*",
+        "grunt-npm-install": "*",
+        "grunt-coffeelint": "*",
+        "time-grunt": "*",
+        "karma-chrome-launcher": "*",
+        "karma-firefox-launcher": "*",
+        "karma-ie-launcher": "*",
+        "karma-opera-launcher": "*",
+        "karma-phantomjs-launcher": "*",
+        "karma-safari-launcher": "*",
+        "karma-jasmine": "*",
+        "karma-junit-reporter": "*",
+        "karma-phantomjs-launcher": "*",
+        "karma-browserstack-launcher": "*",
+        "karma-requirejs": "*",
+        "karma-coverage": "*",
+        "ibrik": "*",
+        "load-grunt-tasks": "*",
+        "lodash": "*",
+        "requirejs": "2",
+        "coffee-script": "1"
+    },
+    "scripts": {
+        "pretest": "node build.js build",
+        "test": "node build.js test"
+    },
+    "engines": {
+        "node": ">=0.10.33"
+    }
+}
