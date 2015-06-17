@@ -4,8 +4,7 @@
     "devDependencies": {
         "coffee-script": "1",
         "requirejs": "2",
-        "require-cs": "0.5",
-        "almond": "murrayju/almond#0.3.0-custom"
+        "require-cs": "0.5"
     },
     "exportsOverride": {
         "coffee-script": {

@@ -6,7 +6,7 @@
     var debug = args.length && (args[0] === '--testDebug');
     var allTestFiles = [];
     var pathToModule = function (path) {
-        var base = path.replace(/^\/base\//, '../../');
+        var base = path.replace(/^\/base\//, '../');
         if (/\.coffee$/.test(base)) {
             return (debug ? 'cs!' : 'coffee!') + base.replace(/\.coffee$/, '');
         }
@@ -22,14 +22,14 @@
 
     requirejs.config({
         // Karma serves files under /base, which is the basePath from your config file
-        baseUrl: '/base/src/js',
+        baseUrl: '/base/src',
         waitSeconds: 0,
 
         paths: {
             // test only
-            'cs': debug ? '../lib/require-cs/cs' : '../../test/karma/cs-passthrough',
-            'coffee': '../lib/require-cs/cs',
-            'coffee-script': '../lib/coffee-script/extras/coffee-script'
+            'cs': debug ? 'lib/require-cs/cs' : '../test/karma/cs-passthrough',
+            'coffee': 'lib/require-cs/cs',
+            'coffee-script': 'lib/coffee-script/extras/coffee-script'
         },
 
         // dynamically load all test files

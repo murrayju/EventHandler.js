@@ -25,40 +25,13 @@ module.exports = function (grunt) {
             }
         },
 
-        // Dependency management and minification
-        requirejs: {
-            options: {
-                baseUrl: "src/js/",
-                siteRoot: "src/",
-                name: "almond",
-                optimize: 'none',
-                optimizeCss: "standard",
-                inlineText: true,
-                stubModules: ['less', 'text', 'cs'],
-                exclude: ['coffee-script'],
-                preserveLicenseComments: false,
-                paths: {
-                    // Inlined dependencies
-                    q: '../lib/q/q',
-
-                    // requirejs plugins
-                    cs: '../lib/require-cs/cs',
-
-                    // build tools
-                    'coffee-script': '../lib/coffee-script/extras/coffee-script',
-                    almond: "../lib/almond/almond"
-                }
-            },
-            mod: {
+        coffee: {
+            compile: {
                 options: {
-                    include: ['cs!EventHandler'],
-                    wrap: {
-                        startFile: 'src/js/wrap/start.frag',
-                        endFile: 'src/js/wrap/end.frag'
-                    },
-                    out: function (text) {
-                        saveFileWithHeader("dist/EventHandler.js", text, "<%= banner %>");
-                    }
+                    sourceMap: true
+                },
+                files: {
+                    'dist/EventHandler.js': 'src/EventHandler.coffee'
                 }
             }
         },
@@ -106,12 +79,11 @@ module.exports = function (grunt) {
                     files: [
                         'test/karma/test-main.js',
                         {pattern: 'test/karma/**/*', included: false},
-                        {pattern: 'test/data/**/*', included: false},
                         {pattern: 'src/**/*', included: false}
                     ],
 
                     preprocessors: {
-                        'src/{js,js/!(lib)}/*.{js,coffee}': ['coverage']
+                        'src/*.{js,coffee}': ['coverage']
                     },
 
                     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -307,6 +279,6 @@ module.exports = function (grunt) {
     grunt.registerTask('dev', ['connect:dev']);
     grunt.registerTask('prebuild', ['gitInfo', 'parseVers', 'npm-install', 'bower']);
     grunt.registerTask('deps', ['prebuild', 'npm-install', 'bower']);
-    grunt.registerTask('build', ['clean', 'deps', 'requirejs', 'uglify']);
+    grunt.registerTask('build', ['clean', 'deps', 'coffee', 'uglify']);
     grunt.registerTask('default', ['build', 'test']);
 };
