@@ -13,6 +13,7 @@
         "grunt-contrib-compress": "*",
         "grunt-contrib-clean": "*",
         "grunt-karma": "*",
+        "grunt-banner": "*",
         "grunt-npm-install": "*",
         "grunt-coffeelint": "*",
         "grunt-karma-coveralls": "*",

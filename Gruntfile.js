@@ -36,6 +36,17 @@ module.exports = function (grunt) {
             }
         },
 
+        usebanner: {
+            mod: {
+                options: {
+                    banner: '<%= banner %>'
+                },
+                files: {
+                    src: ['dist/EventHandler.js']
+                }
+            }
+        },
+
         uglify: {
             options: {
                 preserveComments: false,
@@ -335,6 +346,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('prebuild', ['gitInfo', 'parseVers', 'npm-install', 'bower']);
     grunt.registerTask('deps', ['prebuild', 'npm-install', 'bower']);
-    grunt.registerTask('build', ['clean', 'deps', 'coffee', 'uglify', 'compress']);
+    grunt.registerTask('build', ['clean', 'deps', 'coffee', 'usebanner', 'uglify', 'compress']);
     grunt.registerTask('default', ['build', 'test']);
 };
