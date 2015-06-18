@@ -98,7 +98,7 @@ module.exports = function (grunt) {
                     },
 
                     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-                    reporters: ['dots', 'junit', 'coverage'],
+                    reporters: ['dots', 'junit', 'coverage', 'saucelabs'],
                     junitReporter: {
                         outputFile: 'reports/karma-results.xml'
                     },
@@ -141,6 +141,21 @@ module.exports = function (grunt) {
                         IE10: {
                             base: 'IE',
                             'x-ua-compatible': 'IE=EmulateIE10'
+                        },
+                        sl_chrome: {
+                            base: 'SauceLabs',
+                            browserName: 'chrome',
+                            platform: 'Windows 7'
+                        },
+                        sl_firefox: {
+                            base: 'SauceLabs',
+                            browserName: 'firefox'
+                        },
+                        sl_ie_11: {
+                            base: 'SauceLabs',
+                            browserName: 'internet explorer',
+                            platform: 'Windows 8.1',
+                            version: '11'
                         },
                         bs_chrome: {
                             base: 'BrowserStack',
@@ -193,6 +208,10 @@ module.exports = function (grunt) {
 
                     browserStack: {
                         project: 'EventHandler.js'
+                    },
+
+                    sauceLabs: {
+                        testName: 'EventHandler.js'
                     },
 
                     // Continuous Integration mode
@@ -283,6 +302,11 @@ module.exports = function (grunt) {
             if (grunt.option('all-bs')) {
                 opts.browsers = _.filter(browsers, function (b) {
                     return (/^bs_/).test(b);
+                });
+            }
+            if (grunt.option('all-sl')) {
+                opts.browsers = _.filter(browsers, function (b) {
+                    return (/^sl_/).test(b);
                 });
             }
             _.forEach(browsers, function (b) {

@@ -25,6 +25,7 @@
         "karma-jasmine": "*",
         "karma-junit-reporter": "*",
         "karma-browserstack-launcher": "*",
+        "karma-sauce-launcher": "*",
         "karma-requirejs": "*",
         "karma-coverage": "*",
         "ibrik": "*",
