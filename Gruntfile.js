@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                 }
             },
             app: {
-                src: ['src/js/**/*.coffee']
+                src: ['src/*.coffee']
             }
         },
 
