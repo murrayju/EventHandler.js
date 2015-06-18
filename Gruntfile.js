@@ -50,6 +50,17 @@ module.exports = function (grunt) {
             }
         },
 
+        compress: {
+            mod: {
+                options: {
+                    archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
+                },
+                files: [
+                    { cwd: 'dist/', expand: true, src: ['*.{js,map}'], dest: '/' }
+                ]
+            }
+        },
+
         clean: ['dist', 'reports'],
 
         coffeelint: {
@@ -272,6 +283,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('prebuild', ['gitInfo', 'parseVers', 'npm-install', 'bower']);
     grunt.registerTask('deps', ['prebuild', 'npm-install', 'bower']);
-    grunt.registerTask('build', ['clean', 'deps', 'coffee', 'uglify']);
+    grunt.registerTask('build', ['clean', 'deps', 'coffee', 'uglify', 'compress']);
     grunt.registerTask('default', ['build', 'test']);
 };

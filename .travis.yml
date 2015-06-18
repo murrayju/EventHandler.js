@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - stable
 install: bash build.sh deps
-script: bash build.sh --all-bs
+script: bash build.sh --buildNum $TRAVIS_BUILD_NUMBER --all-bs
 after_success: bash build.sh coveralls
 env:
   global:
