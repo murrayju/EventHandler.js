@@ -152,7 +152,7 @@ module.exports = function (grunt) {
                     },
 
                     browserStack: {
-                        project: 'ThinEditor'
+                        project: 'EventHandler.js'
                     },
 
                     // Continuous Integration mode
@@ -232,6 +232,11 @@ module.exports = function (grunt) {
                 'Safari',
                 'IE'
             ]);
+            if (grunt.option('all-bs')) {
+                opts.browsers = _.filter(browsers, function (b) {
+                    return (/^bs_/).test(b);
+                });
+            }
             _.forEach(browsers, function (b) {
                 if (grunt.option('only-' + b)) {
                     opts.browsers = [b];
