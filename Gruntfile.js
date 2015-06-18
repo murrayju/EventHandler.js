@@ -162,33 +162,33 @@ module.exports = function (grunt) {
                             browser_version: '11.0',
                             os: 'windows',
                             os_version: '8.1'
-                        },
-                        bs_ie_10: {
-                            base: 'BrowserStack',
-                            browser: 'ie',
-                            browser_version: '10.0',
-                            os: 'windows',
-                            os_version: '7'
-                        },
-                        bs_ie_9: {
-                            base: 'BrowserStack',
-                            browser: 'ie',
-                            browser_version: '9.0',
-                            os: 'windows',
-                            os_version: '7'
-                        },
-                        bs_firefox_mac: {
-                            base: 'BrowserStack',
-                            browser: 'firefox',
-                            os: 'OS X',
-                            os_version: 'Yosemite'
-                        },
-                        bs_chrome_mac: {
-                            base: 'BrowserStack',
-                            browser: 'chrome',
-                            os: 'OS X',
-                            os_version: 'Yosemite'
                         }
+                        //bs_ie_10: {
+                        //    base: 'BrowserStack',
+                        //    browser: 'ie',
+                        //    browser_version: '10.0',
+                        //    os: 'windows',
+                        //    os_version: '7'
+                        //},
+                        //bs_ie_9: {
+                        //    base: 'BrowserStack',
+                        //    browser: 'ie',
+                        //    browser_version: '9.0',
+                        //    os: 'windows',
+                        //    os_version: '7'
+                        //},
+                        //bs_firefox_mac: {
+                        //    base: 'BrowserStack',
+                        //    browser: 'firefox',
+                        //    os: 'OS X',
+                        //    os_version: 'Yosemite'
+                        //},
+                        //bs_chrome_mac: {
+                        //    base: 'BrowserStack',
+                        //    browser: 'chrome',
+                        //    os: 'OS X',
+                        //    os_version: 'Yosemite'
+                        //}
                     },
 
                     browserStack: {
