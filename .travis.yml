@@ -3,6 +3,7 @@ node_js:
 - stable
 install: bash build.sh deps
 script: bash build.sh --all-bs
+after_success: bash build.sh coveralls
 env:
   global:
   - BS_AUTOMATE_BUILD="Travis build No. $TRAVIS_BUILD_NUMBER for $TRAVIS_REPO_SLUG"

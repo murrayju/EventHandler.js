@@ -97,6 +97,7 @@ module.exports = function (grunt) {
                             '**/*.coffee': 'ibrik'
                         },
                         includeAllSources: true,
+                        type: 'lcov',
                         dir: 'reports/coverage/',
                         subdir: function (browser) {
                             // normalization process to keep a consistent browser name
@@ -161,6 +162,14 @@ module.exports = function (grunt) {
                     captureTimeout: 60000,
                     browserNoActivityTimeout: 100000
                 }
+            }
+        },
+
+        coveralls: {
+            options: {
+                coverageDir: 'reports/coverage/',
+                recursive: true,
+                force: true
             }
         }
     });
