@@ -145,12 +145,14 @@ module.exports = function (grunt) {
                         bs_chrome: {
                             base: 'BrowserStack',
                             browser: 'chrome',
+                            browser_version: '43.0',
                             os: 'windows',
                             os_version: '7'
                         },
                         bs_firefox: {
                             base: 'BrowserStack',
                             browser: 'firefox',
+                            browser_version: '37.0',
                             os: 'windows',
                             os_version: '7'
                         },
