@@ -1,4 +1,4 @@
-/*! eventhandler.js v0.1.1+0.master.780e61431a1d | (c) 2015 Justin Murray | built on 2015-06-19 */
+/*! eventhandler.js v0.1.2+0.master.5ea164de7b6a | (c) 2015 Justin Murray | built on 2015-06-19 */
 
 (function() {
   var slice = [].slice;

@@ -1,8 +1,14 @@
-syntax: glob
-node_modules/
 bower_components/
-src/lib/
 dist/*.zip
 download/
+node_modules/
 reports/
+src/lib/
 test/
+
+/.*
+*.log
+*.orig
+*.templ.json
+/build.*
+/Gruntfile.js
