@@ -8,11 +8,6 @@
     ],
     "homepage": "https://github.com/murrayju/EventHandler.js",
     "main": "dist/EventHandler.min.js",
-    "files": [
-        "dist",
-        "src/*.coffee",
-        "LICENSE"
-    ],
     "bugs": {
         "url": "https://github.com/murrayju/EventHandler.js/issues"
     },
