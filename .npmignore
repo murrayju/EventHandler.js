@@ -1,0 +1,8 @@
+syntax: glob
+node_modules/
+bower_components/
+src/lib/
+dist/*.zip
+download/
+reports/
+test/

@@ -1,6 +1,6 @@
 {
-    "name": "EventHandler.js",
-    "repository": "https://github.com/murrayju/xmlCoffee",
+    "name": "eventhandler.js",
+    "repository": "murrayju/xmlCoffee",
     "license": "MIT",
     "keywords": [
         "js",
