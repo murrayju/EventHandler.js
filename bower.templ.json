@@ -1,6 +1,21 @@
 {
     "name": "EventHandler.js",
-    "private": true,
+    "description": "A simple class for handling events",
+    "keywords": [
+        "js",
+        "event"
+    ],
+    "homepage": "https://github.com/murrayju/EventHandler.js",
+    "license": "MIT",
+    "main": [
+        "dist/EventHandler.min.js"
+    ],
+    "ignore": [
+        "/.*",
+        "*.templ.json",
+        "test",
+        "build.*"
+    ],
     "devDependencies": {
         "coffee-script": "1",
         "requirejs": "2",
