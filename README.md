@@ -3,6 +3,7 @@ A simple class for handling events
 
 [![Build Status](https://travis-ci.org/murrayju/EventHandler.js.svg?branch=master)](https://travis-ci.org/murrayju/EventHandler.js)
 [![Coverage Status](https://coveralls.io/repos/murrayju/EventHandler.js/badge.svg)](https://coveralls.io/r/murrayju/EventHandler.js)
+[![Dependency Status](https://david-dm.org/murrayju/EventHandler.js.svg)](https://david-dm.org/murrayju/EventHandler.js)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/EventHandler.svg)](https://saucelabs.com/u/EventHandler)
 
