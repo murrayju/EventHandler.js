@@ -2,6 +2,20 @@
     "name": "EventHandler.js",
     "repository": "https://github.com/murrayju/xmlCoffee",
     "license": "MIT",
+    "keywords": [
+        "js",
+        "event"
+    ],
+    "homepage": "https://github.com/murrayju/EventHandler.js",
+    "main": "dist/EventHandler.min.js",
+    "files": [
+        "dist",
+        "src/*.coffee",
+        "LICENSE"
+    ],
+    "bugs": {
+        "url": "https://github.com/murrayju/EventHandler.js/issues"
+    },
     "dependencies": {},
     "devDependencies": {
         "grunt": "*",
