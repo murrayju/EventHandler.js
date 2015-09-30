@@ -24,10 +24,11 @@
 
     fireAsync: (args...) ->
       for fn in @list
-        setTimeout(
-          => fn.apply(this, args)
-          0
-        )
+        do (fn) =>
+          setTimeout(
+            => fn.apply(this, args)
+            0
+          )
       @fireNow = @firesOnce
 
     # emit as alias for fire

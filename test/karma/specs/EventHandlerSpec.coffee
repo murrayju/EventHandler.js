@@ -7,11 +7,14 @@ define [
   describe 'EventHandler', ->
     evt = null
     spy = null
+    spy2 = null
 
     beforeEach ->
       evt = new EventHandler()
       spy = jasmine.createSpy('eventCallback')
+      spy2 = jasmine.createSpy('eventCallback2')
       evt.on(spy)
+      evt.on(spy2)
 
     it 'should exist', () ->
       expect(EventHandler).toBeDefined()
@@ -30,12 +33,15 @@ define [
 
     it 'can run the callbacks async', (done) ->
       expect(spy).not.toHaveBeenCalled()
+      expect(spy2).not.toHaveBeenCalled()
       evt.fireAsync()
       expect(spy).not.toHaveBeenCalled()
+      expect(spy2).not.toHaveBeenCalled()
 
       (checkCalls = ->
-        if (spy.calls.count() > 0)
+        if (spy.calls.count() > 0 && spy2.calls.count() > 0)
           expect(spy).toHaveBeenCalled()
+          expect(spy2).toHaveBeenCalled()
           done()
         else
           setTimeout(checkCalls, 0)
@@ -43,12 +49,15 @@ define [
 
     it 'can run the callbacks async (with args)', (done) ->
       expect(spy).not.toHaveBeenCalled()
+      expect(spy2).not.toHaveBeenCalled()
       evt.fireAsync('async', 'call')
       expect(spy).not.toHaveBeenCalled()
+      expect(spy2).not.toHaveBeenCalled()
 
       (checkCalls = ->
-        if (spy.calls.count() > 0)
+        if (spy.calls.count() > 0 && spy2.calls.count() > 0)
           expect(spy).toHaveBeenCalledWith('async', 'call')
+          expect(spy2).toHaveBeenCalledWith('async', 'call')
           done()
         else
           setTimeout(checkCalls, 0)
@@ -56,26 +65,28 @@ define [
 
     it 'can unregister callbacks', ->
       evt.off(spy)
-      expect(evt.list.length).toBe(0)
+      expect(evt.list.length).toBe(1)
       evt.fire()
       expect(spy).not.toHaveBeenCalled()
+      expect(spy2).toHaveBeenCalled()
 
     it 'can unregister all callbacks', ->
-      spy2 = jasmine.createSpy('eventCallback2')
-      evt.on(spy2)
-      expect(evt.list.length).toBe(2)
+      spy3 = jasmine.createSpy('eventCallback3')
+      evt.on(spy3)
+      expect(evt.list.length).toBe(3)
       evt.off()
       expect(evt.list.length).toBe(0)
       evt.fire()
       expect(spy).not.toHaveBeenCalled()
       expect(spy2).not.toHaveBeenCalled()
+      expect(spy3).not.toHaveBeenCalled()
 
     it 'can be unregistered by ref', ->
-      spy2 = jasmine.createSpy('eventCallback2')
-      ref = evt.on(spy2)
-      expect(evt.list.length).toBe(2)
+      spy3 = jasmine.createSpy('eventCallback3')
+      ref = evt.on(spy3)
+      expect(evt.list.length).toBe(3)
       ref.off()
-      expect(evt.list.length).toBe(1)
+      expect(evt.list.length).toBe(2)
 
   describe 'EventHandler (firesOnce)', ->
     evt = null
